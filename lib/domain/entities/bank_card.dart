@@ -3,7 +3,8 @@ import 'package:flutter_mestore_app/domain/entities/payment_system.dart';
 
 class BankCard {
   final int id;
-  final String title;
+  final String bankName;
+  final String description;
   final String cardNumber;
   final String cardholderName;
   final DateTime expireDate;
@@ -14,7 +15,8 @@ class BankCard {
 
   BankCard(
       {required this.id,
-      required this.title,
+      required this.bankName,
+      required this.description,
       required this.cardNumber,
       required this.cardholderName,
       required this.expireDate,

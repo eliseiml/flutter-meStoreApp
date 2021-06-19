@@ -5,7 +5,8 @@ import 'package:flutter_mestore_app/domain/entities/payment_system.dart';
 class BankCardModel extends BankCard {
   BankCardModel(
       {required int id,
-      required String title,
+      required String bankName,
+      required String description,
       required String cardNumber,
       required String cardholderName,
       required DateTime expireDate,
@@ -15,7 +16,8 @@ class BankCardModel extends BankCard {
       required Color cardColor})
       : super(
             id: id,
-            title: title,
+            bankName: bankName,
+            description: description,
             cardNumber: cardNumber,
             cardholderName: cardholderName,
             expireDate: expireDate,
@@ -27,7 +29,8 @@ class BankCardModel extends BankCard {
   factory BankCardModel.fromMap(Map<String, dynamic> map) {
     return BankCardModel(
         id: map['id'],
-        title: map['title'],
+        bankName: map['bankName'],
+        description: map['description'],
         cardNumber: map['cardNumber'],
         cardholderName: map['cardholderName'],
         expireDate: DateTime.parse(map['expireDate']), //is it safe?
@@ -41,7 +44,8 @@ class BankCardModel extends BankCard {
   Map<String, dynamic> toMap() {
     return {
       'id': id, //int
-      'title': title, //str
+      'bankName': bankName, //str
+      'description': description, //str
       'cardNumber': cardNumber, //str
       'cardholderName': cardholderName, //str
       'expireDate': expireDate.toString(), //str
