@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_mestore_app/domain/entities/bank_card.dart';
+import 'package:flutter_mestore_app/domain/entities/payment_system.dart';
+import 'package:flutter_mestore_app/generated/l10n.dart';
+import 'package:flutter_mestore_app/presentation/widgets/app_bar.dart';
+import 'package:flutter_mestore_app/presentation/widgets/bank_card.dart';
+import 'package:flutter_mestore_app/presentation/widgets/bottom_bar.dart';
+import 'package:flutter_mestore_app/presentation/widgets/custom_icon_button.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: appBar(
+        context: context,
+        text: S.of(context).Cards,
+        leading: customIconButton(
+          context,
+          iconPath: 'assets/icons/hamburger.png',
+          height: 12,
+          width: 18,
+        ),
+        trailing: customIconButton(
+          context,
+          iconPath: 'assets/icons/settings.png',
+          height: 26,
+          width: 26,
+        ),
+      ),
+      body: Center(
+        child: BankCardView(
+            BankCard(
+              id: 1,
+              cardNumber: '1234567890123456',
+              cardholderName: 'yelisei melnichuk',
+              cardColor: Colors.deepPurple,
+              bankName: 'BELARUSBANK',
+              description: 'Salary card',
+              expireDate: DateTime.now(),
+              pinCode: '1234',
+              cvv: '111',
+              paymentSystem:
+                  PaymentSystem(id: 11, name: 'mastercard', logo: null),
+            ),
+            MediaQuery.of(context).size.width),
+      ),
+      bottomNavigationBar: bottomBar(context),
+    );
+  }
+}
