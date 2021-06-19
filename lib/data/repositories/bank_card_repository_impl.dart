@@ -13,15 +13,11 @@ class BankCardRepositoryImpl implements BankCardRepository {
   });
 
   @override
-  Future<bool> addNewBankCard(BankCard newCard) async {
-    return false;
-  }
+  Future<void> addNewBankCard(BankCard newCard) async {}
 
   @override
-  Future<bool> changeBankCardData(
-      {required BankCard oldCard, required BankCard newCard}) async {
-    return false;
-  }
+  Future<void> changeBankCardData(
+      {required BankCard oldCard, required BankCard newCard}) async {}
 
   @override
   Future<List<BankCard>> getAllBankCards() async {
@@ -35,7 +31,5 @@ class BankCardRepositoryImpl implements BankCardRepository {
   }
 
   @override
-  Future<bool> removeBankCard(BankCard card) async {
-    return false;
-  }
+  Future<void> removeBankCard(BankCard card) async {}
 }
