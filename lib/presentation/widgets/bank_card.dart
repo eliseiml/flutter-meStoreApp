@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mestore_app/domain/entities/bank_card.dart';
 import 'package:flutter_mestore_app/generated/l10n.dart';
+import 'package:flutter_mestore_app/utils/colors.dart';
 import 'package:flutter_mestore_app/utils/text_styles.dart';
 
 class BankCardView extends StatefulWidget {
@@ -19,9 +20,18 @@ class _BankCardViewState extends State<BankCardView> {
   @override
   void initState() {
     super.initState();
-    //screenWidth = MediaQuery.of(context).size.width;
     cardWidth = screenWidth! - 48;
     cardHeight = cardWidth! / 1.6;
+  }
+
+  String _getExpireString(DateTime date) {
+    String result = '';
+    if (date.month < 10)
+      result += '0${date.month}/';
+    else
+      result += '${date.month}/';
+    result += date.year.toString().substring(2);
+    return result;
   }
 
   @override
@@ -31,9 +41,17 @@ class _BankCardViewState extends State<BankCardView> {
       width: cardWidth,
       padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
-          color: card.cardColor, borderRadius: BorderRadius.circular(12)),
+          color: card.cardColor,
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+                color: black,
+                offset: Offset(0, -5),
+                blurRadius: 5,
+                spreadRadius: 0),
+          ]),
       child: Stack(
-        alignment: Alignment.bottomRight,
+        alignment: Alignment.topRight,
         children: [
           //logo
           Image.asset('assets/icons/mastercardlogo.png', height: 55),
@@ -44,6 +62,13 @@ class _BankCardViewState extends State<BankCardView> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                /* Row(
+                  children: [
+                    Text(card.description, style: bankCardData),
+                    Spacer(),
+                    Text(card.bankName, style: bankCardData),
+                  ],
+                ), */
                 Text(card.description, style: bankCardData),
                 Text(card.bankName, style: bankCardData),
                 Text(
@@ -60,7 +85,7 @@ class _BankCardViewState extends State<BankCardView> {
                     Text(S.of(context).ValidThru.toUpperCase(),
                         style: bankCardValidThru),
                     Text(
-                      ' ${card.expireDate.month}/${card.expireDate.year}',
+                      ' ' + _getExpireString(card.expireDate),
                       style: bankCardData,
                     )
                   ],
