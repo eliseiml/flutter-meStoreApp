@@ -10,3 +10,4 @@ Color black = Color(0xFF000000);
 Color concrete = Color(0xFFF3F3F3);
 Color white = Color(0xFFFFFFFF);
 Color malachite = Color(0xFF1DBD0F);
+Color tabSeparatorColor = Color(0xFFE5E5E5);

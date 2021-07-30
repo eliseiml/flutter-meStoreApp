@@ -6,11 +6,12 @@ import 'package:flutter_mestore_app/utils/text_styles.dart';
 
 class BankCardView extends StatefulWidget {
   final BankCard card;
-  final double sw;
-  const BankCardView(this.card, this.sw, {Key? key}) : super(key: key);
+  final double screenWidth;
+  const BankCardView({required this.card, required this.screenWidth, Key? key})
+      : super(key: key);
 
   @override
-  _BankCardViewState createState() => _BankCardViewState(card, sw);
+  _BankCardViewState createState() => _BankCardViewState(card, screenWidth);
 }
 
 class _BankCardViewState extends State<BankCardView> {
@@ -40,13 +41,14 @@ class _BankCardViewState extends State<BankCardView> {
       height: cardHeight,
       width: cardWidth,
       padding: EdgeInsets.all(15),
+      margin: EdgeInsets.only(top: 20),
       decoration: BoxDecoration(
           color: card.cardColor,
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-                color: black,
-                offset: Offset(0, -5),
+                color: black.withOpacity(0.2),
+                offset: Offset(5, -5),
                 blurRadius: 5,
                 spreadRadius: 0),
           ]),
@@ -62,13 +64,6 @@ class _BankCardViewState extends State<BankCardView> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                /* Row(
-                  children: [
-                    Text(card.description, style: bankCardData),
-                    Spacer(),
-                    Text(card.bankName, style: bankCardData),
-                  ],
-                ), */
                 Text(card.description, style: bankCardData),
                 Text(card.bankName, style: bankCardData),
                 Text(
