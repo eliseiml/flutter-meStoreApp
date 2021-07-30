@@ -6,18 +6,18 @@ TextStyle appBarTitle = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w400,
     letterSpacing: 0.3,
-    color: rhino);
+    color: MeStoreBasicColors.rhino);
 
 TextStyle bankCardData = TextStyle(
     fontFamily: 'Roboto',
     fontSize: 20,
     fontWeight: FontWeight.w400,
     letterSpacing: 0.3,
-    color: white);
+    color: MeStoreBasicColors.white);
 
 TextStyle bankCardValidThru = TextStyle(
     fontFamily: 'Roboto',
     fontSize: 10,
     fontWeight: FontWeight.w400,
     letterSpacing: 0.3,
-    color: white);
+    color: MeStoreBasicColors.white);

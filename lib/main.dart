@@ -19,9 +19,25 @@ class MeStoreApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
+      //remove Android scroll glow
+      builder: (context, child) {
+        return ScrollConfiguration(
+          behavior: MyScrollBehavior(),
+          child: child,
+        );
+      },
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
+  }
+}
+
+//Defining custom ScrollBehavior to remove scroll glow
+class MyScrollBehavior extends ScrollBehavior {
+  @override
+  Widget buildViewportChrome(
+      BuildContext context, Widget child, AxisDirection axisDirection) {
+    return child;
   }
 }

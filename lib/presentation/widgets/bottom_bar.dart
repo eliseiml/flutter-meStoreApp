@@ -29,7 +29,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
     double secondPosOffset = 3 * 24 + indicatorWidth;
     return Container(
       height: 65,
-      color: geyser,
+      color: MeStoreBasicColors.geyser,
       //alignment: Alignment.topCenter,
       child: Stack(
         //alignment: Alignment.topCenter,
@@ -59,7 +59,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
                 Container(
                   height: 50,
                   width: 1,
-                  color: tabSeparatorColor,
+                  color: MeStoreBasicColors.tabSeparatorColor,
                 ),
                 //Accounts tab
                 GestureDetector(
@@ -80,7 +80,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
           //Animated indicator
           AnimatedPositioned(
             child: Container(
-              color: rhino,
+              color: MeStoreBasicColors.rhino,
             ),
             duration: Duration(milliseconds: 200),
             height: 3,

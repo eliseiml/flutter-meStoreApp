@@ -69,6 +69,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Edit Card`
+  String get EditCard {
+    return Intl.message(
+      'Edit Card',
+      name: 'EditCard',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

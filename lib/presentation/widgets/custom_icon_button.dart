@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 Widget customIconButton(
   BuildContext context, {
   required String iconPath,
-  Function onTap()?,
+  void onTap()?,
   required double height,
   required double width,
 }) {

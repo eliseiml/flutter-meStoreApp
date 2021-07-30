@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mestore_app/domain/entities/payment_system.dart';
+import 'package:flutter_mestore_app/utils/colors.dart';
 
 class BankCard {
   final int id;
@@ -24,4 +25,19 @@ class BankCard {
       required this.cvv,
       required this.paymentSystem,
       required this.cardColor});
+
+  factory BankCard.blankCard() {
+    return BankCard(
+      id: 0,
+      bankName: '',
+      description: '',
+      cardNumber: '',
+      cardholderName: '',
+      expireDate: DateTime.now(),
+      pinCode: '',
+      cvv: '',
+      paymentSystem: PaymentSystem(id: 0, name: '', logo: null),
+      cardColor: BankCardColors.color1,
+    );
+  }
 }

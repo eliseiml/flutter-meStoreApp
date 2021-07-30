@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mestore_app/domain/entities/bank_card.dart';
 import 'package:flutter_mestore_app/domain/entities/payment_system.dart';
 import 'package:flutter_mestore_app/generated/l10n.dart';
+import 'package:flutter_mestore_app/presentation/pages/card_editor_page.dart';
 import 'package:flutter_mestore_app/presentation/widgets/app_bar.dart';
 import 'package:flutter_mestore_app/presentation/widgets/bank_card.dart';
 import 'package:flutter_mestore_app/presentation/widgets/bottom_bar.dart';
 import 'package:flutter_mestore_app/presentation/widgets/custom_icon_button.dart';
+import 'package:flutter_mestore_app/utils/colors.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key key}) : super(key: key);
@@ -60,6 +62,15 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Image.asset('assets/icons/addicon.png', height: 30),
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return CardEditorPage(card: BankCard.blankCard());
+          }));
+        },
+        backgroundColor: MeStoreBasicColors.geyser,
       ),
       bottomNavigationBar: BottomTabBar(
         onChanged: (val) {},
