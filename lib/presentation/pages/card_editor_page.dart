@@ -34,9 +34,12 @@ class CardEditorPage extends StatelessWidget {
       ),
       body: Align(
         alignment: Alignment.topCenter,
-        child: BankCardView(
-          card: card,
-          screenWidth: MediaQuery.of(context).size.width,
+        child: Hero(
+          tag: 'card',
+          child: BankCardView(
+            card: card,
+            screenWidth: MediaQuery.of(context).size.width,
+          ),
         ),
       ),
       bottomNavigationBar: BottomTabBar(onChanged: (val) {}),

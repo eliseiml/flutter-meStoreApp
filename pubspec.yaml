@@ -17,7 +17,7 @@ dependencies:
   sqflite: ^2.0.0+3
   path: ^1.8.0
   equatable: any
-  flutter_bloc: ^7.1.0
+  flutter_bloc: ^7.3.0
   multiple_result: any
 
 dev_dependencies:
